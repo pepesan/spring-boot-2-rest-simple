@@ -1,14 +1,12 @@
 package com.example.demo.controllers;
 
 import com.example.demo.domain.Dato;
-import com.example.demo.domain.DatoComplejo;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -46,7 +44,7 @@ public class MiRestController {
 
     @PutMapping("/{id}")
     public Dato editDatoById(@PathVariable Integer id,
-                             @RequestBody Dato dato)
+                             @Valid @RequestBody Dato dato)
             throws ServletException, IOException {
         // Simulamos devolver el objeto modificado de la BBDD
         dato.setId(id);
