@@ -25,13 +25,14 @@ public class MiRestController {
         }
         return listado;
     }
+    // ADD POST / (Dato)-> Dato
     @PostMapping("/")
     public Dato addDato(@Valid @RequestBody Dato dato)
             throws ServletException, IOException {
         // Simulamos devolver el objeto añadido a la BBDD
         return dato;
     }
-
+    // Mostrar GET /{id} -> Dato
     @GetMapping("/{id}")
     public Dato showDatoById(@PathVariable("id") Integer id)
             throws ServletException, IOException {
@@ -41,7 +42,7 @@ public class MiRestController {
         dato.setCadena("Mi cadena "+id);
         return dato;
     }
-
+    // Editar POST/PUT/PATCH /{id}  (Dato) -> Dato
     @PutMapping("/{id}")
     public Dato editDatoById(@PathVariable Integer id,
                              @Valid @RequestBody Dato dato)
@@ -51,6 +52,7 @@ public class MiRestController {
         dato.setCadena(dato.getCadena());
         return dato;
     }
+    // Borrar DELETE /{id}  -> Dato     GET /{id}/delete -> Dato
     @DeleteMapping("/{id}")
     public Dato deleteDatoById(@PathVariable Integer id)
             throws ServletException, IOException {

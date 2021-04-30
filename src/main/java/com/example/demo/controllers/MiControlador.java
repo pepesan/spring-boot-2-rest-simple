@@ -18,7 +18,7 @@ public class MiControlador {
     public String welcome() {//Welcome page, non-rest
         return "Welcome to RestTemplate Example.";
     }
-    @GetMapping("/datoComplejo")
+    @GetMapping(value = "/datoComplejo")
     public DatoComplejo devuelveDatoComplejo(){
         DatoComplejo datoComplejo = new DatoComplejo();
         datoComplejo.setId(2);

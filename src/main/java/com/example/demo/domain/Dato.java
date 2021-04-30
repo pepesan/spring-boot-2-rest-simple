@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 @Data
 public class Dato implements Serializable {
-    @NotNull
     private Integer id;
     @NotNull
     private String cadena;
